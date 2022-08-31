@@ -21,7 +21,35 @@ The bits which were remaining were appended to string by zeros. In the end strin
 
 This function also has the same operation like unsigned int but there is negative values as well.
 
-The logic is developed in such a way that for positive numbers, it works as per the requirement.
+The logic is developed in such a way that for positive numbers, it works as per the requirement above. For negative numbers, logic is developed in such a way that the number's 2 compliment is found. The operation is done bitwise through a carry bit.
+
+Rest of the operation is same as above function
+
+3) int uint_to_hexstr(char *str, size_t size, uint32_t num, uint8_t nbits)
+
+In this function, number is converted to hexadecimal equivalent using bitwise operation to divide the number by 4.
+
+The remainders obtained are converted to ASCIIs.
+
+4) uint32_t twiggle_bit(uint32_t input, int bit, operation_t operation)
+
+In this function, biwtise OR, AND and XOR are majorly used for Set, reset and toggle operation on the integer. A simple condition is checked if the bit is out of bounds.
+
+5) uint32_t grab_three_bits(uint32_t input, int start_bit)
+
+The 3 bits in input are shifted towards the end of output using shift bitwise operations. Condition is checked to ensure start bit is selected correctly.
+
+6) char *hexdump(char *str, size_t size, const void *loc, size_t nbytes)
+
+This function returns a pointer that stores the input string value in hex. Logic was such that each first offset was calculated and then the hex equivalent of the char values and each byte stored in pointer. 
+
+The test functions were created based on some boundary and error conditions.
+
+3 files are submitted 2 source and 1 header file.
+
+
+
+
 
 
 
